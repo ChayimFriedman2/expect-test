@@ -15,6 +15,11 @@ exclude = ["./github", "bors.toml", "rustfmt.toml"]
 [workspace]
 members = ["xtask"]
 
+[workspace.lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = [
+    "trick_rust_analyzer_into_highlighting_interpolated_bits",
+] }
+
 [dependencies]
 once_cell = "1"
 dissimilar = "1"
